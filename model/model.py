@@ -15,7 +15,6 @@ class IrisModel(nn.Module):
 
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.fc2 = nn.Linear(hidden_size, hidden_size)
-        self.fc3 = nn.Linear(hidden_size, hidden_size)
         self.op = nn.Linear(hidden_size, num_classes)
 
         self.sqelon = SqeLon()
@@ -37,5 +36,5 @@ criterion = nn.CrossEntropyLoss()
 
 if __name__ == "__main__":
     logger.info("Training is started...")
-    train(model, 100, train_loader, optim, criterion, device)
+    train(model, 50, train_loader, optim, criterion, device)
     test(model, test_loader, device)
